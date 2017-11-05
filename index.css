@@ -1,7 +1,30 @@
 body {
     margin: 0;
     padding: 0;
+    
+    background: linear-gradient(270deg, #222222, #411f1f, #142e15, #14212e);
+    background-size: 800% 800%;
+    -webkit-animation: Gradient 39s ease infinite;
+    -moz-animation: Gradient 39s ease infinite;
+    animation: Gradient 39s ease infinite;
 }
+
+@-webkit-keyframes Gradient {
+    0%{background-position:0% 97%}
+    50%{background-position:100% 4%}
+    100%{background-position:0% 97%}
+}
+@-moz-keyframes Gradient {
+    0%{background-position:0% 97%}
+    50%{background-position:100% 4%}
+    100%{background-position:0% 97%}
+}
+@keyframes Gradient { 
+    0%{background-position:0% 97%}
+    50%{background-position:100% 4%}
+    100%{background-position:0% 97%}
+}
+
 p {
     margin: 0;
 }
@@ -38,8 +61,10 @@ p {
     height: 180px;
     object-fit: cover;
     border-radius: 50%;
-    float: left;
     margin: 20px 20px 0px 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 #contactFormBtn, #resumeBtn {
     padding: 10px;
@@ -101,7 +126,6 @@ p {
 #footer {
     padding-top: 5px;
     padding-bottom: 5px;
-    background-color: #222222;
 }
 .fa-disabled {
     opacity: 0.6;
@@ -110,19 +134,6 @@ p {
 .icon-size {
     width: 25px;
     height: 25px;
-}
-.footer-icon {
-    margin-left: 5px;
-    margin-right: 5px;
-    font-size: 160%;
-    color: #dddddd;
-}
-#contactModalName, #contactModalEmail, #contactModalPhone, #contactModalWebsite, #contactModalBody {
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-#nameError, #emailError, #bodyError {
-    display: none;
 }
 #resumeBtn {
     vertical-align: middle;
@@ -151,16 +162,30 @@ p {
 .no-underline {
     text-decoration: none !important;
 }
+.aboutUsText {
+    float: none;
+    margin: 0 auto;
+}
+.aboutUsName {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 22px;
+    float: none;
+    margin: 0 auto;
+}
+#summary {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
 
 /* fonts */
-#aboutUsTitle, #portfolioTitle, #mainTitle, .modal-title {
+#aboutUsTitle, #portfolioTitle, #mainTitle, .modal-title, .aboutUsName {
     font-family: 'Roboto Slab', sans-serif;
 }
-.alert, #bio, #contactFormBtn, #aboutLinkText, #portfolioLinkText, #resumeBtn, #allTab, #softwareTab, #webTab, #photographyTab, #filmTab, #vfxTab, #modelingTab, #conway-info, #footer, #arLink, .projectTitle, .modal-text, #loading-text {
+.alert, #bio, #contactFormBtn, #aboutLinkText, #portfolioLinkText, #resumeBtn, #allTab, #softwareTab, #webTab, #photographyTab, #filmTab, #vfxTab, #modelingTab, #conway-info, #footer, #arLink, .projectTitle, .modal-text, #loading-text, .aboutUsText {
     font-family: 'Roboto', sans-serif;
 }
 #titleRed {
-  color: #7f3737;
   color: #7f3737;
 }
 #titleGreen {
