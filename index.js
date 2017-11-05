@@ -32,7 +32,7 @@ function print2dArray(arr) {
 }
 function clone(arr) {
     var xCoordCells = arr.length;
-    var yCoordCells = arr[0].length;                
+    var yCoordCells = arr[0].length;
 
     var newArr = new Array(xCoordCells);
     for (var i = 0; i < xCoordCells; i++)
@@ -163,7 +163,7 @@ function initialState(canvas, gridSize) {
             else
                 cells[i][j] = 1;
         }
-    }           
+    }
 
     // Draw cells at their initial state
     for (var i = 0; i < xCoordCells; i++) {
@@ -338,38 +338,38 @@ $(function changeColor() {
 });
 
 // functions for the pages
-function setAboutMePage() {
-    $("#aboutMe").css("padding-left", $(window).width() * 0.1);
-    $("#aboutMe").css("padding-right", $(window).width() * 0.1);
-    $("#aboutMe").css("padding-top", $(window).height() * 0.1);
-    $("#aboutMe").css("padding-bottom", $(window).height() * 0.1);
-    $("#aboutMe").width($(window).width() * 0.8);
-    $("#aboutMe").height($(window).height() * 0.8);
+function setaboutUsPage() {
+    $("#aboutUs").css("padding-left", $(window).width() * 0.1);
+    $("#aboutUs").css("padding-right", $(window).width() * 0.1);
+    $("#aboutUs").css("padding-top", $(window).height() * 0.1);
+    $("#aboutUs").css("padding-bottom", $(window).height() * 0.1);
+    $("#aboutUs").width($(window).width() * 0.8);
+    $("#aboutUs").height($(window).height() * 0.8);
 
     // sets the font size of the page's title based on the window's width
     if ($(window).width() <= 1000)
-        $("#aboutMeTitle").css("font-size", "32px");
+        $("#aboutUsTitle").css("font-size", "32px");
     else if ($(window).width() <= 1300)
-        $("#aboutMeTitle").css("font-size", "49px");
+        $("#aboutUsTitle").css("font-size", "49px");
     else if ($(window).width() <= 1600)
-        $("#aboutMeTitle").css("font-size", "66px");
+        $("#aboutUsTitle").css("font-size", "66px");
     else if ($(window).width() <= 1900)
-        $("#aboutMeTitle").css("font-size", "83px");
+        $("#aboutUsTitle").css("font-size", "83px");
     else
-        $("#aboutMeTitle").css("font-size", "100px");
+        $("#aboutUsTitle").css("font-size", "100px");
 
     $("#bio").css("padding", "20px");
-    $("#aboutMeMainText").height($("#aboutMe").height() - $("#aboutMeTitle").height() - $("#aboutMeBtn").height());
+    $("#aboutUsMainText").height($("#aboutUs").height() - $("#aboutUsTitle").height() - $("#aboutUsBtn").height());
 
     // sets the width & height of the profile picture as 25% of the height of the text box or 33% of the width of the text box, whichever is less
     var profileWH = 0;
-    if (($("#aboutMeMainText").width() / 3) < ($("#aboutMeMainText").height() / 4))
-        profileWH = Math.ceil($("#aboutMeMainText").width() / 3);
+    if (($("#aboutUsMainText").width() / 3) < ($("#aboutUsMainText").height() / 4))
+        profileWH = Math.ceil($("#aboutUsMainText").width() / 3);
     else
-        profileWH = Math.ceil($("#aboutMeMainText").height() / 3);
+        profileWH = Math.ceil($("#aboutUsMainText").height() / 3);
 
     $("#profile").width(profileWH + "px");
-    $("#profile").height(profileWH + "px");                
+    $("#profile").height(profileWH + "px");
 
     // set correct sizing for "sent email" alert
     $(".alert").css("margin-left", $(window).width() * 0.1);
@@ -377,10 +377,10 @@ function setAboutMePage() {
     $(".alert").css("margin-top", $(window).height() * 0.1);
     $(".alert").css("margin-bottom", $(window).height() * 0.1);
 
-    if (Math.abs($("#aboutMe").width() - ($(".alert").width() + parseFloat($(".alert").css("padding-left")) + parseFloat($(".alert").css("padding-right")))) > 10)
+    if (Math.abs($("#aboutUs").width() - ($(".alert").width() + parseFloat($(".alert").css("padding-left")) + parseFloat($(".alert").css("padding-right")))) > 10)
     {
-        $(".alert").css("margin-left", (parseFloat($(".alert").css("margin-left")) + (($("#aboutMe").width() - ($(".alert").width() + parseFloat($(".alert").css("padding-left")) + parseFloat($(".alert").css("padding-right")))) / 2)) + "px");
-        $(".alert").css("margin-right", (parseFloat($(".alert").css("margin-right")) + (($("#aboutMe").width() - ($(".alert").width() + parseFloat($(".alert").css("padding-left")) + parseFloat($(".alert").css("padding-right")))) / 2)) + "px");
+        $(".alert").css("margin-left", (parseFloat($(".alert").css("margin-left")) + (($("#aboutUs").width() - ($(".alert").width() + parseFloat($(".alert").css("padding-left")) + parseFloat($(".alert").css("padding-right")))) / 2)) + "px");
+        $(".alert").css("margin-right", (parseFloat($(".alert").css("margin-right")) + (($("#aboutUs").width() - ($(".alert").width() + parseFloat($(".alert").css("padding-left")) + parseFloat($(".alert").css("padding-right")))) / 2)) + "px");
     }
 }
 function setMainPage() {
@@ -434,60 +434,12 @@ function setPortfolioPage() {
     if ($("#portfolio").height() < ($(window).height() * 0.8))
         $("#portfolio").height($(window).height() * 0.8);
 
-    $("#portfolioTitle").css("font-size", $("#aboutMeTitle").css("font-size"));
-}
-function setModalImageSizes() {
-    var innerW = 0;
-    var multiplier = 0;
-
-    if ($("#modal-homeVR").find(".carousel-inner").width() != 100) {
-        innerW = $("#modal-homeVR").find(".carousel-inner").width();
-        multiplier = 334 / 695;
-    }
-    else if ($("#modal-alaska").find(".carousel-inner").width() != 100) {
-        innerW = $("#modal-alaska").find(".carousel-inner").width();
-        multiplier = 0.75;
-    }
-    else if ($("#modal-california").find(".carousel-inner").width() != 100) {
-        innerW = $("#modal-california").find(".carousel-inner").width();
-        multiplier = 0.75;
-    }
-    else if ($("#modal-nevada").find(".carousel-inner").width() != 100) {
-        innerW = $("#modal-nevada").find(".carousel-inner").width();
-        multiplier = 0.75;
-    }
-    else if ($("#modal-canada").find(".carousel-inner").width() != 100) {
-        innerW = $("#modal-canada").find(".carousel-inner").width();
-        multiplier = 0.75;
-    }
-
-    $(".img-fluid").each(function() {
-        $(this).width(innerW);
-        $(this).height(innerW * multiplier);
-    });
-
-    if ($("#sketchfab-sfr").width() != 100) {
-        $("#sketchfab-sfr").width($("#modal-sciFiRevolver").find(".modal-body").width());
-        $("#sketchfab-sfr").height($("#modal-sciFiRevolver").find(".modal-body").width() * 0.75);
-    }
-    else if ($("#sketchfab-h").width() != 100) {
-        $("#sketchfab-h").width($("#modal-house").find(".modal-body").width());
-        $("#sketchfab-h").height($("#modal-house").find(".modal-body").width() * 0.75);
-    }
-    else if ($("#sketchfab-hu").width() != 100) {
-        $("#sketchfab-hu").width($("#modal-houseUntextured").find(".modal-body").width());
-        $("#sketchfab-hu").height($("#modal-houseUntextured").find(".modal-body").width() * 0.75);
-    }
-    else if ($("#sketchfab-pg").width() != 100) {
-        $("#sketchfab-pg").width($("#modal-powerGenerator").find(".modal-body").width());
-        $("#sketchfab-pg").height($("#modal-powerGenerator").find(".modal-body").width() * 0.75);
-    }
+    $("#portfolioTitle").css("font-size", $("#aboutUsTitle").css("font-size"));
 }
 
-setAboutMePage();
+setaboutUsPage();
 setMainPage();
 setPortfolioPage();
-setModalImageSizes();
 
 var gridSize = 50; // in pixels
 var stepDelay = 400; // in milliseconds
@@ -497,23 +449,12 @@ setCanvasGrid(canvas, gridSize, 1000);
 var cells = initialState(canvas, gridSize);
 run(cells, stepDelay);
 
-// Portfolio gallery
-var mixer = mixitup($("#portfolioContainer"));
-
 // Enable hover for text on project when project tile is hovered over
 $(".project").hover(function () {
-    // for when hover begins
-    $(this).children('.projectTitle').css("transition", "0.5s");
-    $(this).children('.projectTitle').css("opacity", 1);
-
     $(this).children('img').css("transition", "0.5s");
-    $(this).children('img').css("opacity", 0.3);
+    $(this).children('img').css("opacity", 0.7);
 
 }, function () {
-    // for when hover ends
-    $(this).children('.projectTitle').css("transition", "0.5s");
-    $(this).children('.projectTitle').css("opacity", 0);
-
     $(this).children('img').css("transition", "0.5s");
     $(this).children('img').css("opacity", 1);
 });
@@ -521,7 +462,7 @@ $(".project").hover(function () {
 // Smooth scrolling for links to About Me and Portfolio pages
 $("#aboutLinkText").click(function() {
     $('html, body').animate({
-        scrollTop: $("#aboutMe").offset().top
+        scrollTop: $("#aboutUs").offset().top
     }, 1000);
 });
 $("#portfolioLinkText").click(function() {
@@ -541,193 +482,98 @@ $("#linkToPortfolio").hover(function() {
     $("#portfolioLinkText").transition({scale: 1});
 });
 
-// Submit contact form and error checking
-$("#form").submit(function() {
-    if ($("#nameInput").val() == "")
-    {
-        $("#contactModalName").removeClass("has-success");
-        $("#contactModalName").addClass("has-danger");
 
-        $("#nameInput").removeClass("form-control-success");
-        $("#nameInput").addClass("form-control-danger");
-
-        $("#nameError").css("display", "block");
-    }
-    else
-    {
-        $("#contactModalName").removeClass("has-danger");
-        $("#contactModalName").addClass("has-success");
-
-        $("#nameInput").removeClass("form-control-danger");
-        $("#nameInput").addClass("form-control-success");
-
-        $("#nameError").css("display", "none");
-    }
-
-    if ($("#emailInput").val() == "")
-    {
-        $("#contactModalEmail").removeClass("has-success");
-        $("#contactModalEmail").addClass("has-danger");
-
-        $("#emailInput").removeClass("form-control-success");
-        $("#emailInput").addClass("form-control-danger");
-
-        $("#emailError").css("display", "block");
-    }
-    else
-    {
-        $("#contactModalEmail").removeClass("has-danger");
-        $("#contactModalEmail").addClass("has-success");
-
-        $("#emailInput").removeClass("form-control-danger");
-        $("#emailInput").addClass("form-control-success");
-
-        $("#emailError").css("display", "none");
-    }
-
-    if ($("#bodyInput").val() == "")
-    {
-        $("#contactModalBody").removeClass("has-success");
-        $("#contactModalBody").addClass("has-danger");
-
-        $("#bodyInput").removeClass("form-control-success");
-        $("#bodyInput").addClass("form-control-danger");
-
-        $("#bodyError").css("display", "block");
-    }
-    else
-    {
-        $("#contactModalBody").removeClass("has-danger");
-        $("#contactModalBody").addClass("has-success");
-
-        $("#bodyInput").removeClass("form-control-danger");
-        $("#bodyInput").addClass("form-control-success");
-
-        $("#bodyError").css("display", "none");
-    }
-
-    if ($("#websiteInput").val() != "")
-    {
-        $("#contactModalWebsite").addClass("has-success");
-        $("#websiteInput").addClass("form-control-success");
-    }
-
-    if ($("#nameInput").val() != "" && $("#emailInput").val() != "" && $("#bodyInput").val() != "")
-        return true;
-    else
-        return false;
+// open modals of portfolio items
+$("#openModal-8950DiningTableByRolfBenz").click(function() {
+    $("#modal-8950DiningTableByRolfBenz").modal("show");
 });
-
-// open modals of portfolio items without affecting MixItUp
-$("#contactFormBtn").click(function() {
-    $("#contactFormModal").modal("show");
+$("#openModal-AboutAChairByHay").click(function() {
+    $("#modal-AboutAChairByHay").modal("show");
 });
-$("#openModal-smartLock").click(function() {
-    $("#modal-smartLock").modal("show");
+$("#openModal-AC4OfficeChairByVitra").click(function() {
+    $("#modal-AC4OfficeChairByVitra").modal("show");
 });
-$("#openModal-homeVR").click(function() {
-    $("#modal-homeVR").modal("show");
+$("#openModal-AnamorphicConsoleByAsherIsraelow").click(function() {
+    $("#modal-AnamorphicConsoleByAsherIsraelow").modal("show");
 });
-$("#openModal-domainNameChecker").click(function() {
-    $("#modal-domainNameChecker").modal("show");
+$("#openModal-ArmchairRockerByVitraEames").click(function() {
+    $("#modal-ArmchairRockerByVitraEames").modal("show");
 });
-$("#openModal-theDragonsLairCTF").click(function() {
-    $("#modal-theDragonsLairCTF").modal("show");
+$("#openModal-BB8").click(function() {
+    $("#modal-BB8").modal("show");
 });
-$("#openModal-cpScripts").click(function() {
-    $("#modal-cpScripts").modal("show");
+$("#openModal-BeoPlayH6HeadphonesByBangAndOlufsen").click(function() {
+    $("#modal-BeoPlayH6HeadphonesByBangAndOlufsen").modal("show");
 });
-$("#openModal-worldCupSimulator").click(function() {
-    $("#modal-worldCupSimulator").modal("show");
+$("#openModal-BluetoothGramophoneByGramovox").click(function() {
+    $("#modal-BluetoothGramophoneByGramovox").modal("show");
 });
-$("#openModal-leagueTableSimulator").click(function() {
-    $("#modal-leagueTableSimulator").modal("show");
+$("#openModal-CootTableByTacchini").click(function() {
+    $("#modal-CootTableByTacchini").modal("show");
 });
-$("#openModal-encryptScript").click(function() {
-    $("#modal-encryptScript").modal("show");
+$("#openModal-DeployTableByBossDesign").click(function() {
+    $("#modal-DeployTableByBossDesign").modal("show");
 });
-$("#openModal-tlcComputerSolutions").click(function() {
-    $("#modal-tlcComputerSolutions").modal("show");
+$("#openModal-DeskGreenByNobodinoz").click(function() {
+    $("#modal-DeskGreenByNobodinoz").modal("show");
 });
-$("#openModal-alaska").click(function() {
-    $("#modal-alaska").modal("show");
+$("#openModal-FarnsworthHouseByLego").click(function() {
+    $("#modal-FarnsworthHouseByLego").modal("show");
 });
-$("#openModal-california").click(function() {
-    $("#modal-california").modal("show");
+$("#openModal-GrandReposChair").click(function() {
+    $("#modal-GrandReposChair").modal("show");
 });
-$("#openModal-nevada").click(function() {
-    $("#modal-nevada").modal("show");
+$("#openModal-HackneySofaByHay").click(function() {
+    $("#modal-HackneySofaByHay").modal("show");
 });
-$("#openModal-canada").click(function() {
-    $("#modal-canada").modal("show");
+$("#openModal-InfinityClockByBosaCeramiche").click(function() {
+    $("#modal-InfinityClockByBosaCeramiche").modal("show");
 });
-$("#openModal-theScientist").click(function() {
-    $("#modal-theScientist").modal("show");
+$("#openModal-KS9500Curved4KSUHDTVBySamsung").click(function() {
+    $("#modal-KS9500Curved4KSUHDTVBySamsung").modal("show");
 });
-$("#openModal-shatteredHeaven").click(function() {
-    $("#modal-shatteredHeaven").modal("show");
+$("#openModal-LegamiBedByZanotta").click(function() {
+    $("#modal-LegamiBedByZanotta").modal("show");
 });
-$("#openModal-darkHorizon").click(function() {
-    $("#modal-darkHorizon").modal("show");
+$("#openModal-LeicaM9DigitalCameraByLeica").click(function() {
+    $("#modal-LeicaM9DigitalCameraByLeica").modal("show");
 });
-$("#openModal-holdingTheWire").click(function() {
-    $("#modal-holdingTheWire").modal("show");
+$("#openModal-LeyaLoungeByFreifrau").click(function() {
+    $("#modal-LeyaLoungeByFreifrau").modal("show");
 });
-$("#openModal-asciiIntro").click(function() {
-    $("#modal-asciiIntro").modal("show");
+$("#openModal-LinieMContainerSystemByMuellerManufaktur").click(function() {
+    $("#modal-LinieMContainerSystemByMuellerManufaktur").modal("show");
 });
-$("#openModal-sinisterMeeting").click(function() {
-    $("#modal-sinisterMeeting").modal("show");
+$("#openModal-NewiMacByApple").click(function() {
+    $("#modal-NewiMacByApple").modal("show");
 });
-$("#openModal-sciFiRevolver").click(function() {
-    $("#modal-sciFiRevolver").modal("show");
+$("#openModal-PikapOTT2000ByPhilips").click(function() {
+    $("#modal-PikapOTT2000ByPhilips").modal("show");
 });
-$("#openModal-house").click(function() {
-    $("#modal-house").modal("show");
+$("#openModal-Plant").click(function() {
+    $("#modal-Plant").modal("show");
 });
-$("#openModal-houseUntextured").click(function() {
-    $("#modal-houseUntextured").modal("show");
+$("#openModal-RockyHorseByMagis").click(function() {
+    $("#modal-RockyHorseByMagis").modal("show");
 });
-$("#openModal-powerGenerator").click(function() {
-    $("#modal-powerGenerator").modal("show");
+$("#openModal-TitanesSideboardByMaxalto").click(function() {
+    $("#modal-TitanesSideboardByMaxalto").modal("show");
 });
-
-
-// Set image sizes inside modals
-$("#modal-homeVR").on("shown.bs.modal", function () {
-    setModalImageSizes();
+$("#openModal-TitaniumRadioClockByLexon").click(function() {
+    $("#modal-TitaniumRadioClockByLexon").modal("show");
 });
-$("#modal-alaska").on("shown.bs.modal", function () {
-    setModalImageSizes();
+$("#openModal-TuftyTime15SofaByBAndBItalia").click(function() {
+    $("#modal-TuftyTime15SofaByBAndBItalia").modal("show");
 });
-$("#modal-california").on("shown.bs.modal", function () {
-    setModalImageSizes();
-});
-$("#modal-nevada").on("shown.bs.modal", function () {
-    setModalImageSizes();
-});
-$("#modal-canada").on("shown.bs.modal", function () {
-    setModalImageSizes();
-});
-$("#modal-sciFiRevolver").on("shown.bs.modal", function () {
-    setModalImageSizes();
-});
-$("#modal-house").on("shown.bs.modal", function () {
-    setModalImageSizes();
-});
-$("#modal-houseUntextured").on("shown.bs.modal", function () {
-    setModalImageSizes();
-});
-$("#modal-powerGenerator").on("shown.bs.modal", function () {
-    setModalImageSizes();
+$("#openModal-VitoStoolByAreaDeclic").click(function() {
+    $("#modal-VitoStoolByAreaDeclic").modal("show");
 });
 
 // Redraw grid and reset pages whenever the window is resized (on non-mobile/tablet devices)
 $(window).resize(function() {
-        setAboutMePage();
+        setaboutUsPage();
         setMainPage();
         setPortfolioPage();
-        setModalImageSizes();
         setBackgroundSize();
         setCanvasGrid(canvas, gridSize, 0);
         cells = initialState(canvas, gridSize);
