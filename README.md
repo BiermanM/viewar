@@ -1,6 +1,8 @@
 # viewar
 An alternative method for online catalogs using augmented reality
 
+![alt text](https://challengepost-s3-challengepost.netdna-ssl.com/photos/production/software_photos/000/563/801/datas/gallery.jpg "Headphones viewed in viewar")
+
 ## Inspiration
 We were inspired to create viewar by expensive, lengthy workflows that companies have to go through to display their products online, so that users can see what the product looks like without needing to see it inside a store. Some companies hire photographers to take photoshoots of various furniture pieces on a staged set, which can be quite expensive, but most companies use photorealistic renders of 3d models, which is a time intensive process. Viewar is an inexpensive, quick, and simple solution. Companies can send us the 3d model, which they already have, and we give them a QR code that they can place on their website. The user can download our viewar app and see the product in augmented reality, meaning they can view it from any angle and in any lighting they so desire, giving them a more authentic experience.
 
